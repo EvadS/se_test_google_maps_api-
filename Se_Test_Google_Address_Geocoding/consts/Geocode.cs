@@ -38,13 +38,18 @@ namespace Se_Test_Google_Address_Geocoding.consts
         public static async Task<Coordinate> GetCoordinates(string address)
         {     
             Uri uri = GetGeocodeUri(address);
-    
+            double lantitude = 0.0;
+            double longitude = 0.0;
+
+            if (string.IsNullOrWhiteSpace(uri.ToString()))
+            {
+                return new Coordinate(lantitude, longitude);
+            }
             HttpClient httpClient = new HttpClient();
             var response = await httpClient.GetStringAsync(uri);
         
             RootObject root = JsonConvert.DeserializeObject<RootObject>(response);
-            double lantitude = 0.0;
-            double longitude = 0.0;
+         
 
             foreach(var item in root.results)
             {
