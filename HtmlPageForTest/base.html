@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+    <title>Simple markers</title>
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+          /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+          #map {
+              height: 100%;
+          }
+          /* Optional: Makes the sample page fill the window. */
+          html, body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+          }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div id="map" class="z-depth-1" style="height: 500px;"></div>
+        </div>
+    </div>
+
+    <script>
+
+      function initMap() {
+          var myLatLng = { lat: 37.4224082, lng: -122.0856086 };
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: ' 1600 Amphitheatre Parkway Mountain View, CA 94043'
+        });
+      }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8iQUj6TP_9ClwRvBLlmnBIZAC7UeNxM8&callback=initMap">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
