@@ -57,6 +57,7 @@
     <Compile Include="entities\Address.cs" />
     <Compile Include="entities\AddressComponent.cs" />
     <Compile Include="enums\LatLngAccurateToTypes.cs" />
+    <Compile Include="Helpers\GeoCodeHelper.cs" />
     <Compile Include="interface\ISpatialCoordinate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
